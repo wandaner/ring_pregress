@@ -17,24 +17,24 @@ import java.io.InputStream;
  * Created by xukai on 2017/09/29.
  */
 
-public class RRCenterView extends View {
+public class RRCenterRing extends View {
     private final int Padding = 30;
     private Bitmap bitmap;
     private Paint paint;
     private Rect rect;
     private Resources resources;
     private static final int id = R.raw.rr_ring_2;
-    public RRCenterView(Context context) {
+    public RRCenterRing(Context context) {
         super(context);
         init(context);
     }
 
-    public RRCenterView(Context context, @Nullable AttributeSet attrs) {
+    public RRCenterRing(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public RRCenterView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public RRCenterRing(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

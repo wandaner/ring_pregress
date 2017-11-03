@@ -19,7 +19,7 @@ import java.util.TimerTask;
  * Created by xukai on 2017/09/29.
  */
 
-public class RRView extends View {
+public class RROtherRing extends View {
 
     private static final int N = 12;
     private final int Padding = 30;
@@ -42,28 +42,28 @@ public class RRView extends View {
 
     private boolean isRun = true;
     private boolean isRunCenter = true;
-    public void setCenterView(RRCenterView centerView) {
+    private RRCenterRing centerView;
+
+    public void setCenterView(RRCenterRing centerView) {
         this.centerView = centerView;
     }
-
-    private RRCenterView centerView;
     private static final int[] idList = {
             R.raw.rr_ring_2,R.raw.rr_ring_1,R.raw.rr_ring_3,
             R.raw.rr_ring_4,R.raw.rr_ring_5,R.raw.rr_ring_6,
             R.raw.rr_ring_7,R.raw.rr_ring_8,R.raw.rr_ring_9,
             R.raw.rr_ring_10,R.raw.rr_ring_11,R.raw.rr_ring_12
     };
-    public RRView(Context context) {
+    public RROtherRing(Context context) {
         super(context);
         init(context);
     }
 
-    public RRView(Context context, @Nullable AttributeSet attrs) {
+    public RROtherRing(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public RRView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public RROtherRing(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -155,6 +155,8 @@ public class RRView extends View {
     }
     private Paint getPaint(){
         Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setFilterBitmap(true);
         paint.setAlpha(0);
         return paint;
     }
